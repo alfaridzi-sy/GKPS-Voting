@@ -1,0 +1,750 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Aug 31, 2020 01:59:00").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("countdown_absen").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+    </script>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Proses Voting | Panel Admin SB Voting</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- adminpro icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/adminpro-custon-icon.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- modals CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/modals.css">
+    <!-- tabs CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/tabs.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="darklayout">
+    
+    <!-- Semua bagian Body-->
+    <div class="wrapper-pro">
+
+
+           <!-- Sidebar-->
+           <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="#"><img src="img/message/1.jpg" alt="" />
+                    </a>
+                    <h3>Sebastian Saragih</h3>
+                    <p>Administrator </p>
+                    <strong>VP+</strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Halaman Utama</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="halaman-utama.html" class="dropdown-item">Statistik</a>
+                                <a href="pengaturan-sesi.html" class="dropdown-item">Mulai Pengaturan Sesi</a>     
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-table"></i> <span class="mini-dn">Klien / Peserta Voting</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="klien.html" class="dropdown-item">Semua Klien</a>
+                                <a href="registrasi-klien.html" class="dropdown-item">Registrasi Klien Via Admin Panel (Manual)</a>                          
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Sesi</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="sesi.html" class="dropdown-item">Semua Sesi</a>
+                                <a href="pengaturan-sesi.html" class="dropdown-item">Mulai Pengaturan Sesi</a>
+                                <a href="pendaftaran-kandidat.html" class="dropdown-item">Pendaftaran Kandidat</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-pie-chart"></i> <span class="mini-dn">Absensi Peserta</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="pengaturan-absensi.html" class="dropdown-item">Pengaturan Absensi Peserta</a>
+                                <a href="absen-manual.html" class="dropdown-item">Absensi Klien Via Admin Panel (Manual)</a>
+                                <a href="data-absensi.html" class="dropdown-item">Semua Data Absensi</a>
+                            </div>
+                        </li>                  
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Proses Voting</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown form-left-menu-std animated flipInX">
+                                <a href="voting.html" class="dropdown-item">Lakukan Proses Voting</a>
+                                <a href="hasil-voting.html" class="dropdown-item">Hasil Voting</a>
+                                <a href="voting-manual.html" class="dropdown-item">Penambahan Surat Suara Via Admin Panel (Manual)</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-files-o"></i> <span class="mini-dn">MASTER DATA</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown apps-left-menu-std animated flipInX">
+                                <a href="tambah-jenis-pemilihan.html" class="dropdown-item">Tambah Jenis Pemilihan</a>
+                            
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-desktop"></i> <span class="mini-dn">SYSTEM</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
+                                <a href="backupdb.html" class="dropdown-item">Backup/Download Database</a>
+                                <a href="backupdb.html" class="dropdown-item">Restore Database</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+            <!-- Sidebar-->
+
+        <!-- Semua Bagian Kontent-->
+        <div class="content-inner-all">
+
+             <!-- Semua Bagian Taskbar Atas-->
+             <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="admin-logo logo-wrap-pro">
+                                    <a href="#"><img src="img/logo/log.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">                                     
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                <div class="header-right-info">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="adminpro-icon adminpro-chat-pro"></span><span class="indicator-ms"></span></a>
+                                            <div role="menu" class="author-message-top dropdown-menu animated flipInX">
+                                                <div class="message-single-top">
+                                                    <h1>Pesan</h1>
+                                                </div>
+                                                <ul class="message-menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="message-img">
+                                                                <img src="img/message/1.jpg" alt="">
+                                                            </div>
+                                                            <div class="message-content">
+                                                                <span class="message-date">24 Aug 2020</span>
+                                                                <h2>Mintos</h2>
+                                                                <p>Belum ada pesan penting [Sistem].</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="message-view">
+                                                    <a href="#">Lihat Semua Pesan</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                            <div role="menu" class="notification-author dropdown-menu animated flipInX">
+                                                <div class="notification-single-top">
+                                                    <h1>Pemberitahuan</h1>
+                                                </div>
+                                                <ul class="notification-menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="notification-icon">
+                                                                <span class="adminpro-icon adminpro-checked-pro"></span>
+                                                            </div>
+                                                            <div class="notification-content">
+                                                                <span class="notification-date">24 Aug 2020</span>
+                                                                <h2>Mintos</h2>
+                                                                <p>Belum ada pemberitahuan.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="notification-view">
+                                                    <a href="#">Semua Pemberitahuan</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                <span class="admin-name">Admin</span>
+                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                <li><a href="#"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>Pengaturan Admin</a>
+                                                </li> 
+                                                <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Prosesi Voting</a>
+                                                </li>
+                                                <li><a href="#"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Keluar</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
+
+                                            <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated flipInX">
+                                                <ul class="nav nav-tabs custon-set-tab">
+                                                    <li class="active"><a data-toggle="tab" href="#Notes">Catatan</a>
+                                                    </li>                      
+                                                    <li><a data-toggle="tab" href="#Settings">Pengaturan Prosesi Voting</a>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="tab-content">
+                                                    <div id="Notes" class="tab-pane fade in active">
+                                                        <div class="notes-area-wrap">
+                                                            <div class="note-heading-indicate">
+                                                                <h2><i class="fa fa-comments-o"></i> Catatan Terbaru</h2>
+                                                                <p>Anda Memiliki 1 Pesan Belum Terbaca</p>
+                                                            </div>
+                                                            <div class="notes-list-area notes-menu-scrollbar">
+                                                                <ul class="notes-menu-list">
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="notes-list-flow">
+                                                                                <div class="notes-img">
+                                                                                    <img src="img/notification/5.jpg" alt="" />
+                                                                                </div>
+                                                                                <div class="notes-content">
+                                                                                    <p> Tes Pesan Prosesi Voting.</p>
+                                                                                    <span>Kemarin 2:45 pm</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>                                                                   
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="Projects" class="tab-pane fade">
+                                                        <div class="projects-settings-wrap">
+                                                            <div class="note-heading-indicate">
+                                                                <h2><i class="fa fa-cube"></i> Latest projects</h2>
+                                                                <p> You have 20 projects. 5 not completed.</p>
+                                                            </div>
+                                                            <div class="project-st-list-area project-st-menu-scrollbar">
+                                                                <ul class="projects-st-menu-list">
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Web Development</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">1 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content">
+                                                                                    <p>Completion with: 28%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 28%;" class="progress-bar progress-bar-danger"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Software Development</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">2 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content project-rating-cl">
+                                                                                    <p>Completion with: 68%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 68%;" class="progress-bar"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Graphic Design</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">3 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content">
+                                                                                    <p>Completion with: 78%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 78%;" class="progress-bar"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Web Design</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">4 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content project-rating-cl2">
+                                                                                    <p>Completion with: 38%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 38%;" class="progress-bar progress-bar-danger"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Business Card</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">5 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content">
+                                                                                    <p>Completion with: 28%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 28%;" class="progress-bar progress-bar-danger"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Ecommerce Business</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">6 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content project-rating-cl">
+                                                                                    <p>Completion with: 68%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 68%;" class="progress-bar"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Woocommerce Plugin</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">7 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content">
+                                                                                    <p>Completion with: 78%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 78%;" class="progress-bar"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="project-list-flow">
+                                                                                <div class="projects-st-heading">
+                                                                                    <h2>Wordpress Theme</h2>
+                                                                                    <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                    <span class="project-st-time">9 hours ago</span>
+                                                                                </div>
+                                                                                <div class="projects-st-content project-rating-cl2">
+                                                                                    <p>Completion with: 38%</p>
+                                                                                    <div class="progress progress-mini">
+                                                                                        <div style="width: 38%;" class="progress-bar progress-bar-danger"></div>
+                                                                                    </div>
+                                                                                    <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="Settings" class="tab-pane fade">
+                                                        <div class="setting-panel-area">
+                                                            <div class="note-heading-indicate">
+                                                                <h2><i class="fa fa-gears"></i> Mini Panel Pengaturan</h2>
+                                                                <p> Anda Telah Melakukan 20 Voting, 18 Selesai, 2 Belum Selesai</p>
+                                                            </div>
+                                                            <ul class="setting-panel-list">                                                     
+                                                                <li>
+                                                                    <div class="checkbox-setting-pro">
+                                                                        <div class="checkbox-title-pro">
+                                                                            <h2>Jalankan Sesi</h2>
+                                                                            <div class="ts-custom-check">
+                                                                                <div class="onoffswitch">
+                                                                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                                    <label class="onoffswitch-label" for="example3">
+                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="checkbox-setting-pro">
+                                                                        <div class="checkbox-title-pro">
+                                                                            <h2>Jalankan Absensi</h2>
+                                                                            <div class="ts-custom-check">
+                                                                                <div class="onoffswitch">
+                                                                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                                                                    <label class="onoffswitch-label" for="example4">
+                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="checkbox-setting-pro">
+                                                                        <div class="checkbox-title-pro">
+                                                                            <h2>Jalankan Voting</h2>
+                                                                            <div class="ts-custom-check">
+                                                                                <div class="onoffswitch">
+                                                                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                                                                    <label class="onoffswitch-label" for="example7">
+                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+																	<div class="checkbox-setting-pro">
+                                                                        <div class="checkbox-title-pro">
+                                                                            <h2>Reset Semua Prosesi</h2>
+                                                                            <div class="ts-custom-check">
+                                                                                <div class="btn btn-custon-four btn-danger" button type="button" class="adminpro-icon adminpro-danger-error">
+                                                                                  Reset</button>                                           
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>                                                             
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Semua Bagian Taskbar Atas-->
+
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcome-list shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="breadcome-heading">
+                                            <h2>Proses Voting</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Voting</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Jalankan Proses Voting</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+
+            <!-- Formulir Sesi Dengan Modal Start-->       
+            <div class="basic-form-area adminpro-pd mg-b-15">
+                <div class="container-fluid">   
+                    <div class="row">
+                        <div class="sparkline12-list shadow-reset mg-t-30">
+                            <div class="modal-bootstrap shadow-reset">
+                                <div id="InformationproModalblbgpro" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-close-area modal-close-df">
+                                                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                            </div>
+                                            <div class="modal-body">
+                                                <span class="adminpro-icon adminpro-informatio modal-check-pro information-icon-pro"> </span>
+                                                <h2>Proses Voting Akan Segera Dimulai</h2>
+                                                <p>Admin Akan Menjalankan Proses Voting Kode Sesi :'#id_sesi' Untuk : '#keterangan_pemilihan' Dengan Durasi '#durasi' Dimulai Dari Tombol "Mulai" Ditekan</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a data-dismiss="modal" href="#">Batalkan</a>
+                                                <a class="Alert Alert-color" href="#" data-toggle="modal" data-target="#AlertModalblbgpro">Mulai</a>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="AlertModalblbgpro" class="modal modal-adminpro-general FullColor-popup-AlertModal PrimaryModal-bgcolor fade">
+                                  
+                                        <div class="modal-content">
+                                            <div class="modal-close-area modal-close-df">
+                                                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                            </div>
+                                            <div class="modal-body">
+                                                <span class="adminpro-icon adminpro-warning modal-check-pro information-icon-pro"></span>
+                                                <h2>Proses Voting Kode Sesi '#_id_sesi' Untuk '#keterangan_sesi' Sedang Berjalan!</h2><br><br>
+                                                
+                                                <button id="countdown_absen" type="button" class="btn btn-custon-four btn-primary btn-lg" name="status_absen_aktif"></button>    
+                                                
+                                                <p>Admin Dapat Menghentikan Jalannya Proses Voting Secara Manual Dengan Menekan Tombol "Hentikan" Tanpa Menunggu Durasi Absen Habis Secara Automatis</p>
+                                            </div>
+                                            <br><br>
+                                            <div class="modal-footer">
+                                                <a href="#">Hentikan</a>
+                                                <br><br>
+                                            </div>
+                                            <br><br>
+                                        </div>
+                                    
+                                </div>
+                        <div class="sparkline12-graph">                      
+                            <div class="basic-login-form-ad">
+                                <div class="row">                     
+                                    <div class="col-lg-12">
+                                        <div class="sparkline12-hd">
+                                            <div class="main-sparkline12-hd">
+                                                
+                                                    <div class="logo">
+                                                        <a href="#"><img src="img/logo/logo_dari_mintos.png" alt="" />
+                                                        </a>
+                                                    </div>    <br><br>
+                                                    <div class="tab-content-details shadow-reset">
+                                                        <h2>SEMUA PENGATURAN SUDAH SELESAI DILAKSANAKAN, SISTEM SIAP MENJALANKAN PROSES VOTING</h2>
+                                                        <p>PROSES VOTING KODE SESI '#kode_sesi' Untuk 'keterangan_sesi'</p>
+                                                        <img src="img/system_voting_ready.png" alt="" />  <img src="img/system_voting_ready.png" alt="" />  <img src="img/system_voting_ready.png" alt="" />
+                                                    </div>
+                                                    
+                                                                                                                                  
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="all-form-element-inner">
+                                            <form action="#">    
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label class="login2 pull-right pull-right-pro">Kode Sesi</label>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-select-list">
+                                                                <select class="form-control custom-select-value" name="account">
+                                                                    <option>Silahkan Pilih Sesi</option>
+                                                                    <option>112</option>
+                                                                    <option>'#id_sesi'</option>
+                                                                    <option>'#id_sesi'</option>
+                                                                    <option>'#id_sesi'</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                                                                
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label class="login2 pull-right pull-right-pro">Jenis Pemilihan</label>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" disabled class="form-control" placeholder="#jenis_pemilihan" />
+                                                        </div>
+                                                    </div>
+                                                </div>      
+
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label class="login2 pull-right pull-right-pro">Keterangan Sesi</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="login-textarea-area">
+                                                                <textarea class="contact-message" cols="110" rows="5" placeholder="#keterangan_sesi" disabled></textarea>
+                                                                <i class="fa fa-comment login-user"></i>
+                                                            </div>
+                                                        </div>                                                       
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label class="login2 pull-right pull-right-pro">Durasi Voting</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="touchspin-inner">
+                                                                <input class="touchspin2" type="text" value="-" name="demo2">
+                                                            </div>
+                                                        </div>                                                     
+                                                    </div>
+                                                </div>
+                                             
+                                            <br><br><br>
+                                                <div class="form-group-inner">
+                                                    <div class="login-btn-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3"></div>
+                                                            <div class="col-lg-9">
+                                                                <div class="login-horizental cancel-wp pull-left">
+                                                                    <button class="btn btn-white" type="submit">Reset</button>                                              
+                                                                    <button type="button" class="btn btn-warning" href="#" data-toggle="modal" data-target="#InformationproModalblbgpro">Jalankan Proses Voting</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <!-- Formulir Sesi Dengan Modal Start-->
+        </div>
+    </div>
+
+     <!-- Footer-->
+   <div class="footer-copyright-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-copy-right">
+                    <p>Copyright &#169; 2020 Sistem Aplikasi Voting SB GKPS. Dikembangkan Oleh <a href="https://mintoscreative.com">Mintos Creative Pematangsiantar</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer End-->
+
+
+    
+    <!-- jquery
+		============================================ -->
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="js/jquery.meanmenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- touchspin JS
+		============================================ -->
+        <script src="js/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <script src="js/touchspin/touchspin-active.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- modal JS
+		============================================ -->
+    <script src="js/modal-active.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>
